@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --grey-color: #999999;
+    --white-color: #ffffff;
+}
+.form-body{
+    display: flex;
+    justify-content: center;
+}
+.form-body .container{
+    border-color: var(--white-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 50%);
+    overflow: hidden;
+    width: calc(100vw - 65vw);
+    max-width: 100%;
+}
+.header{
+    background: var(--primary-color);
+    padding: 15px 0;
+}
+.header h3{
+    color: var(--white-color);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.myform{
+    padding: 30px;
+    background: var(--panel-color);
+}
+.field,
+.choose{
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.field input,
+.choose select{
+    width: 100%;
+    font-size: 14px;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+body.dark .field input,
+body.dark .choose select{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.field input:focus,
+.field input:valid,
+.field select:focus{
+    outline: 0;
+    border-color: var(--primary-color);
+}
+.field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: var(--grey-color);
+    font-weight: 400;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.field input:focus ~ label,
+.field input:valid ~ label{
+    top: 0%;
+    font-size: 16px;
+    color: #0E4BF1;
+    background: #fff;
+    transform: translateY(-50%);
+}
+body.dark .field input:focus ~ label,
+body.dark .field input:valid ~ label{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.field.error{
+    margin-bottom: 35px;
+}
+.field.success input{
+    border-color: #2ecc71;
+}
+.field.error input{
+    border-color: #e74c3c;
+}
+.field.error input:focus ~ label,
+.field.error input:valid ~ label{
+    color: #e74c3c;
+}
+.field.success input:focus ~ label,
+.field.success input:valid ~ label{
+    color: #2ecc71;
+}
+.field i{
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    visibility: hidden;
+}
+.field.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+.field.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+.field small{
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+.field.error small{
+    visibility: visible;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.myform .btn{
+    background: var(--primary-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    color: var(--white-color);
+    display: block;
+    font-size: 16px;
+    padding: 15px;
+    margin: 20px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 1s ease;
+}
+.myform .btn:active{
+    transform: scale(0.80);
+}
+@media (max-width:998px) {
+    .container{
+        width: calc(100vw - 35vw);
+        max-width: 100%;
+    }
+}
